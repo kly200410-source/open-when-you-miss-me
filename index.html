@@ -148,4 +148,25 @@ Xa một chút cũng được, chậm một chút cũng được, miễn là t�
       and paste its iframe instead. */
 </script>
 </body>
+  
+<button id="enterBtn">🎵 Vào website</button>
+
+<audio id="bgMusic" loop preload="auto">
+  <source src="Chưa Được Yêu Như Thế (1).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("enterBtn");
+
+  btn.addEventListener("click", async () => {
+    try {
+      await music.play();
+      btn.textContent = "🎶 Nhạc đang phát";
+    } catch (error) {
+      btn.textContent = "▶ Bấm để phát nhạc";
+    }
+  });
+</script>
+
 </html>
